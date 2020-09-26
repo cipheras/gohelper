@@ -1,9 +1,8 @@
-# GoHelper &nbsp;&nbsp; ![GitHub release (latest by date)](https://img.shields.io/github/v/release/cipheras/gohelper?style=flat)
+# GoHelper &nbsp;![GitHub release (latest by date)](https://img.shields.io/github/v/release/cipheras/gohelper?style=flat&logo=superuser)
 #### A GO module to help in projects in generating formatted logs in log files and colored messages on the terminal. 
 
-![Lines of ](https://img.shields.io/tokei/lines/github/cipheras/gohelper?style=flat)
+![Lines of code](https://img.shields.io/tokei/lines/github/cipheras/gohelper?style=flat)
 &nbsp;&nbsp;&nbsp;&nbsp;![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/cipheras/gohelper?style=flat)
-&nbsp;&nbsp;&nbsp;&nbsp;![GitHub](https://img.shields.io/github/license/cipheras/gohelper)
 &nbsp;&nbsp;&nbsp;&nbsp;![GitHub All Releases](https://img.shields.io/github/downloads/cipheras/gohelper/total?style=flat)
 
 ## Installation
@@ -16,7 +15,7 @@ go get github.com/cipheras/gohelper
 **gohelper** basically has two features, creating formatted logs in a file and show formatted texts on console.
 
 ### How to create formatted logs:
-*Disclaimer: You have to configure `log` to write logs to file instead of showing it on terminal.*
+*Note: You have to configure `log` to write logs to file instead of showing it on terminal.*
 
 You don't have to write `if err!=nil{}` everytime, you can just do
 ```
@@ -49,8 +48,8 @@ fmt.Println(BLUE, "hello", BOLD, var1, BLINK, var2, "!!", RESET)
 - [ ] Colored text on cmd for windows
 
 ## License
-**gohelper** is made by **@cipheras** and is released under MIT license.
+**gohelper** is made by **@cipheras** and is released under the terms of the &nbsp;![GitHub License](https://img.shields.io/github/license/cipheras/gohelper)
 
-## Contact &nbsp;&nbsp; [![Twitter](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2Fcipheras%2Fgohelper&label=Tweet)](https://twitter.com/intent/tweet?text=Hi:&url=https%3A%2F%2Fgithub.com%2Fcipheras%2Fgohelper)
+## Contact &nbsp;[![Twitter](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2Fcipheras%2Fgohelper&label=Tweet)](https://twitter.com/intent/tweet?text=Hi:&url=https%3A%2F%2Fgithub.com%2Fcipheras%2Fgohelper)
 > Feel free to submit a bug, add features or issue a pull request.
 
