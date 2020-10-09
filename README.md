@@ -15,7 +15,7 @@ go get github.com/cipheras/gohelper
 **gohelper** basically has two features, creating formatted logs in a file and show formatted texts on console.
 
 ### How to create formatted logs:
-*Note: You have to configure `log` to write logs to file instead of showing it on terminal.*
+***Note:** You have to configure `log` to write logs to file instead of showing it on terminal.*
 
 You don't have to write `if err!=nil{}` everytime, you can just do
 ```
@@ -46,6 +46,7 @@ fmt.Println(BLUE, "hello", BOLD, var1, BLINK, var2, "!!", RESET)
 ## To Do
 - [x] Colored text on console for linux
 - [ ] Colored text on cmd for windows
+- [ ] Add more text and background colors
 
 ## License
 **gohelper** is made by **@cipheras** and is released under the terms of the &nbsp;![GitHub License](https://img.shields.io/github/license/cipheras/gohelper)

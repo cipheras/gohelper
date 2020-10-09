@@ -105,10 +105,10 @@ func Cwindows() error {
 	if err != nil {
 		return err
 	}
-	defer reg.Close()
 	err = reg.SetDWordValue("VirtualTerminalLevel", 0x00000001)
 	if err != nil {
 		return err
 	}
+	reg.Close()
 	return nil
 }
