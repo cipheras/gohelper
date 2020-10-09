@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 # GoHelper &nbsp; ![GitHub release (latest by date)](https://img.shields.io/github/v/release/cipheras/gohelper?style=flat&logo=superuser)
-=======
-# GoHelper &nbsp;![GitHub release (latest by date)](https://img.shields.io/github/v/release/cipheras/gohelper?style=flat&logo=superuser)
->>>>>>> 003eefb6ad4ec3149b0a6075916fd752555842ba
+
 #### A GO module to help in projects in generating formatted logs in log files and colored messages on the terminal. 
 
 ![Lines of code](https://img.shields.io/tokei/lines/github/cipheras/gohelper?style=flat)
@@ -19,11 +16,7 @@ go get github.com/cipheras/gohelper
 **gohelper** basically has two features, creating formatted logs in a file and show formatted texts on console.
 
 ### How to create formatted logs:
-<<<<<<< HEAD
 ***Note:** You have to configure `log` when calling log module to write logs to file instead of showing it on terminal.*
-=======
-*Note: You have to configure `log` to write logs to file instead of showing it on terminal.*
->>>>>>> 003eefb6ad4ec3149b0a6075916fd752555842ba
 
 You don't have to write `if err!=nil{}` everytime, you can just do
 ```
@@ -34,11 +27,10 @@ If mode=true, process will exit and if mode=false, process will generate a warni
 This will write the same message to logs and also will show on terminal in that particular format.
 
 ### How to create formatted texts on console:
-*To show colors on windows **cmd** also, call function `Cwindows()`.*
+* To show colors on windows **cmd** also, call function `Cwindows()`.
 ```
 Example:
 err := Cwindows()
-
 ```
 
 ```
@@ -66,10 +58,7 @@ fmt.Println(BLUE, "hello", BOLD, var1, BLINK, var2, "!!", RESET)
 ## License
 **gohelper** is made by **@cipheras** and is released under the terms of the &nbsp;![GitHub License](https://img.shields.io/github/license/cipheras/gohelper)
 
-<<<<<<< HEAD
 ## Contact &nbsp; [![Twitter](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2Fcipheras%2Fgohelper&label=Tweet)](https://twitter.com/intent/tweet?text=Hi:&url=https%3A%2F%2Fgithub.com%2Fcipheras%2Fgohelper)
-=======
-## Contact &nbsp;[![Twitter](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2Fcipheras%2Fgohelper&label=Tweet)](https://twitter.com/intent/tweet?text=Hi:&url=https%3A%2F%2Fgithub.com%2Fcipheras%2Fgohelper)
->>>>>>> 003eefb6ad4ec3149b0a6075916fd752555842ba
+
 > Feel free to submit a bug, add features or issue a pull request.
 
