@@ -98,3 +98,8 @@ func Cprint(mode string, msg ...interface{}) {
 		fmt.Print("\n" + CYAN + "[" + PURPLE + "*" + CYAN + "] " + PURPLE + msgs + "\n" + GREEN + ">> " + RESET)
 	}
 }
+
+// Cwindows ...Edit registry to suppory ANSII
+func Cwindows() error {
+	return nil
+}
