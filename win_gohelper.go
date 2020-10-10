@@ -1,10 +1,11 @@
+// +build windows
+
 package gohelper
 
 import (
 	"fmt"
 	"log"
 	"os"
-	"runtime"
 
 	"golang.org/x/sys/windows/registry"
 )
@@ -102,10 +103,6 @@ func Cprint(mode string, msg ...interface{}) {
 
 // Cwindows ...Edit registry to suppory ANSII
 func Cwindows() error {
-	if runtime.GOOS != "windows" {
-		log.Println("Not building for windows")
-		return nil
-	}
 	reg, err := registry.OpenKey(registry.CURRENT_USER, `Console`, registry.WRITE)
 	if err != nil {
 		return err
