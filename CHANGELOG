@@ -1,0 +1,8 @@
+v1.4.0
+- Removed extra linux_gohelper.go file
+- Now you can also log information
+- New logging structure
+
+v1.3.3
+- Windows cmd color support has been added.
+- Auto compilation based on OS.
