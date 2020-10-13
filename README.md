@@ -26,7 +26,7 @@ If mode=true, process will exit and if mode=false, process will generate a warni
 ```
 This will write the same message to logs and also will show on terminal in that particular format.
 
-<br>If you want to log `info`, do:
+<br>If you want to log `info`(other information), do:
 ```
 Try(nil, false, message)
 ```
