@@ -20,11 +20,16 @@ go get github.com/cipheras/gohelper
 
 You don't have to write `if err!=nil{}` everytime, you can just do
 ```
-Try(message, error, mode)
+Try(error, mode, message)
 where, mode can be true or false
 If mode=true, process will exit and if mode=false, process will generate a warning message.
 ```
 This will write the same message to logs and also will show on terminal in that particular format.
+
+<br>If you want to log `info`, do:
+```
+Try(nil, false, message)
+```
 
 ### How to create formatted texts on console:
 * To show colors on windows **cmd** also, call function `Cwindows()`.
@@ -53,6 +58,7 @@ fmt.Println(BLUE, "hello", BOLD, var1, BLINK, var2, "!!", RESET)
 ## To Do
 - [x] Colored text on console for linux
 - [x] Colored text on cmd for windows
+- [x] ERR,INFO,WARN type log structure
 - [ ] Add more text and background colors
 
 ## License
