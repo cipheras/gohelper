@@ -41,11 +41,11 @@ err := Cwindows()
 Cprint(mode, message)
 where mode can be,
     N = "normal"
-	E = "error"
-	W = "warning"
-	T = "text"
-	I = "info"
-	S = "shell"
+    E = "error"
+    W = "warning"
+    T = "text"
+    I = "info"
+    S = "shell"
 ```
 You can also use available colors and formats inbetween any of these or your own console outputs. 
 <br>Available ones are:
@@ -56,7 +56,7 @@ fmt.Println(BLUE, "hello", BOLD, var1, BLINK, var2, "!!", RESET)
 
 Output:
 ```
-![](static/example.gif)
+![example](https://media.giphy.com/media/wSKT7XggpckVfTTkTB/giphy.gif)
 
 ## To Do
 - [x] Colored text on console for linux
