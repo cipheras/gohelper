@@ -4,7 +4,6 @@
 
 ![Lines of code](https://img.shields.io/tokei/lines/github/cipheras/gohelper?style=flat)
 &nbsp;&nbsp;&nbsp;&nbsp;![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/cipheras/gohelper?style=flat)
-&nbsp;&nbsp;&nbsp;&nbsp;![GitHub All Releases](https://img.shields.io/github/downloads/cipheras/gohelper/total?style=flat)
 
 ## Installation
 You can import this module and start using it.
@@ -32,7 +31,7 @@ Try(nil, false, message)
 ```
 
 ### How to create formatted texts on console:
-* To show colors on windows **cmd** also, call function `Cwindows()`.
+* To show colors on **WINDOWS CMD** also, call function `Cwindows()`.
 ```
 Example:
 err := Cwindows()
@@ -54,7 +53,11 @@ You can also use available colors and formats inbetween any of these or your own
 RESET | RED | GREEN | YELLOW | BLUE | PURPLE | CYAN | WHITE | BGBLACK | BOLD | UNDERLINE | BLINK | CLEAR
 Example:     
 fmt.Println(BLUE, "hello", BOLD, var1, BLINK, var2, "!!", RESET)
+
+Output:
 ```
+![](static/example.gif)
+
 ## To Do
 - [x] Colored text on console for linux
 - [x] Colored text on cmd for windows
