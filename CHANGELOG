@@ -1,3 +1,9 @@
+v1.4.1
+- CMD color support in Windows
+- No permanent changes in registry
+- New "Try" Structure supporting mutiple messages now
+- Auto file logging on one function call
+
 v1.4.0
 - Removed extra linux_gohelper.go file
 - Now you can also log information
