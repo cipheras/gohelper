@@ -1,5 +1,3 @@
-// +build !windows
-
 package gohelper
 
 import (
@@ -40,14 +38,15 @@ const (
 	S = "shell"
 )
 
-func Flog() {
+func Flog() error {
 	f, err := os.OpenFile("log.txt", os.O_CREATE|os.O_RDWR|os.O_TRUNC, 0644)
 	if err != nil {
-		fmt.Println(err)
+		return err
 	}
 	log.SetOutput(f)
 	log.SetFlags(log.Lshortfile | log.Ldate | log.Ltime)
 	// defer f.Close()
+	return nil
 }
 
 // Try ...
@@ -100,11 +99,6 @@ func Cprint(mode string, msg ...interface{}) {
 	case S: //shell
 		fmt.Print("\n" + CYAN + "[" + PURPLE + "*" + CYAN + "] " + PURPLE + msgs + "\n" + GREEN + ">> " + RESET)
 	}
-}
-
-// Cwindows ...Edit registry to suppory ANSII
-func Cwindows() error {
-	return nil
 }
 
 const (
