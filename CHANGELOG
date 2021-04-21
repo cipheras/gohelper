@@ -1,7 +1,7 @@
-v1.4.1
+v1.4.2
 - CMD color support in Windows
 - No permanent changes in registry
-- New "Try" Structure supporting mutiple messages now
+- New "Try" Structure supporting multiple messages now
 - Auto file logging on one function call
 
 v1.4.0
