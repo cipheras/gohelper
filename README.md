@@ -15,7 +15,7 @@ go get github.com/cipheras/gohelper
 **gohelper** basically has two features, creating formatted logs in a file and show formatted texts on console.
 
 ### How to create formatted logs:
-***Note:** You have to configure `log` when calling log module to write logs to file instead of showing it on terminal.*
+***Note:** You can configure `log` module according to your needs if you do not want to use gohelpers log format and still can use "Try" with it.*
 
 You don't have to write `if err!=nil{}` everytime, you can just do
 ```
@@ -25,9 +25,19 @@ If mode=true, process will exit and if mode=false, process will generate a warni
 ```
 This will write the same message to logs and also will show on terminal in that particular format.
 
-<br>If you want to log `info`(other information), do:
+* To automatically generate `log.txt` file and write logs in it, call function `Flog()`.
 ```
-Try(nil, false, message)
+Examples:
+Try(err, true, "logging this") //it will log this message in case of err=nil, and if err!=nil then will log this message with error in file.
+Try(err, false) //in this case it will not log in file if err=nil, and if err!=nil it will log the error.
+
+OUTPUT:
+2021/4/12 14:34:23 main.go:24: [INFO] generating logs
+```
+
+<br> If you want to log `info`(other information), do:
+```
+Try(err, false, message)
 ```
 
 ### How to create formatted texts on console:
