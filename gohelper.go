@@ -1,3 +1,5 @@
+// +build !windows
+
 package gohelper
 
 import (
@@ -38,8 +40,18 @@ const (
 	S = "shell"
 )
 
+func Flog() {
+	f, err := os.OpenFile("log.txt", os.O_CREATE|os.O_RDWR|os.O_TRUNC, 0644)
+	if err != nil {
+		fmt.Println(err)
+	}
+	log.SetOutput(f)
+	log.SetFlags(log.Lshortfile | log.Ldate | log.Ltime)
+	// defer f.Close()
+}
+
 // Try ...
-func Try(err error, mode bool, msg ...interface{}) { //msgs,err,exit/noexit
+func Try(err error, mode bool, msg ...interface{}) { //err,exit/noexit,msg
 	var msgs string
 	for _, v := range msg {
 		msgs = msgs + fmt.Sprintf("%v ", v)
@@ -48,11 +60,11 @@ func Try(err error, mode bool, msg ...interface{}) { //msgs,err,exit/noexit
 		if msgs != "" {
 			if mode == true {
 				Cprint(E, msgs)
-				log.Println("[ERR]", msgs)
+				log.Println("[ERR]", msgs, err)
 				os.Exit(0)
 			}
 			Cprint(W, msgs)
-			log.Println("[WARN]", msgs)
+			log.Println("[WARN]", msgs, err)
 			return
 		}
 		if mode == true {
@@ -63,8 +75,7 @@ func Try(err error, mode bool, msg ...interface{}) { //msgs,err,exit/noexit
 		Cprint(W, err)
 		log.Println("[WARN]", err)
 		return
-	}
-	if msgs != "" {
+	} else if msgs != "" {
 		log.Println("[INFO]", msgs)
 	}
 }
