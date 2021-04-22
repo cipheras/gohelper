@@ -44,7 +44,7 @@ func Flog() error {
 		return err
 	}
 	log.SetOutput(f)
-	log.SetFlags(log.Lshortfile | log.Ldate | log.Ltime)
+	log.SetFlags(log.LstdFlags)
 	// defer f.Close()
 	return nil
 }
@@ -59,23 +59,23 @@ func Try(err error, mode bool, msg ...interface{}) { //err,exit/noexit,msg
 		if msgs != "" {
 			if mode == true {
 				Cprint(E, msgs)
-				log.Println("[ERR]", msgs, err)
+				log.Println("[ERROR]", msgs, "-", err)
 				os.Exit(0)
 			}
 			Cprint(W, msgs)
-			log.Println("[WARN]", msgs, err)
+			log.Println("[WARN] ", msgs, "-", err)
 			return
 		}
 		if mode == true {
-			Cprint(E, err)
-			log.Println("[ERR]", err)
+			// Cprint(E, err)
+			log.Println("[ERROR]", err)
 			os.Exit(0)
 		}
-		Cprint(W, err)
-		log.Println("[WARN]", err)
+		// Cprint(W, err)
+		log.Println("[WARN] ", err)
 		return
 	} else if msgs != "" {
-		log.Println("[INFO]", msgs)
+		log.Println("[INFO] ", msgs)
 	}
 }
 
@@ -85,19 +85,21 @@ func Cprint(mode string, msg ...interface{}) {
 	for _, v := range msg {
 		msgs = msgs + fmt.Sprintf("%v ", v)
 	}
-	switch mode {
-	case N: //normal
-		fmt.Println("\n" + CYAN + "[" + GREEN + "+" + CYAN + "] " + GREEN + msgs + RESET)
-	case E: //error
-		fmt.Println("\n" + CYAN + "[" + RED + BLINK + "-" + RESET + CYAN + "] " + RED + BGBLACK + BOLD + "ERROR" + RESET + " " + RED + msgs + RESET)
-	case W: //warning
-		fmt.Println("\n" + CYAN + "[" + YELLOW + BLINK + "!" + RESET + CYAN + "] " + YELLOW + BGBLACK + BOLD + "WARN" + RESET + " " + YELLOW + msgs + RESET)
-	case T: //text
-		fmt.Println("\n" + CYAN + "[" + PURPLE + "*" + CYAN + "] " + PURPLE + msgs + RESET)
-	case I: //info
-		fmt.Println("\n" + CYAN + "[" + BLUE + "i" + CYAN + "] " + BLUE + msgs + RESET)
-	case S: //shell
-		fmt.Print("\n" + CYAN + "[" + PURPLE + "*" + CYAN + "] " + PURPLE + msgs + "\n" + GREEN + ">> " + RESET)
+	if msgs != "<nil> " {
+		switch mode {
+		case N: //normal
+			fmt.Println("\n" + CYAN + "[" + GREEN + "+" + CYAN + "] " + GREEN + msgs + RESET)
+		case E: //error
+			fmt.Println("\n" + CYAN + "[" + RED + BLINK + "-" + RESET + CYAN + "] " + RED + BGBLACK + BOLD + "ERROR" + RESET + " " + RED + msgs + RESET)
+		case W: //warning
+			fmt.Println("\n" + CYAN + "[" + YELLOW + BLINK + "!" + RESET + CYAN + "] " + YELLOW + BGBLACK + BOLD + "WARN" + RESET + " " + YELLOW + msgs + RESET)
+		case T: //text
+			fmt.Println("\n" + CYAN + "[" + PURPLE + "*" + CYAN + "] " + PURPLE + msgs + RESET)
+		case I: //info
+			fmt.Println("\n" + CYAN + "[" + BLUE + "i" + CYAN + "] " + BLUE + msgs + RESET)
+		case S: //shell
+			fmt.Print("\n" + CYAN + "[" + PURPLE + "*" + CYAN + "] " + PURPLE + msgs + "\n" + GREEN + ">> " + RESET)
+		}
 	}
 }
 

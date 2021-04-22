@@ -23,9 +23,15 @@ Try(error, mode, message)
 where, mode can be true or false
 If mode=true, process will exit and if mode=false, process will generate a warning message.
 ```
-This will write the same message to logs and also will show on terminal in that particular format.
+* This will write the same message to logs and also will show on terminal if some message is given.
+* If no message is given, it will only log and do not show on terminal.
+* To show original error on terminal, use `Cprint(err)`. If err!=nil, it will be shown on terminal.
+* If you want to log `info`(other information), do:
+```
+Try(nil, false, message)
+```
 
-* To automatically generate `log.txt` file and write logs in it, call function `Flog()`.
+<br>To automatically generate `log.txt` file and write logs in it, call function `Flog()`.
 ```
 Examples:
 Try(err, true, "logging this") //it will log this message in case of err=nil, and if err!=nil then will log this message with error in file.
@@ -33,11 +39,6 @@ Try(err, false) //in this case it will not log in file if err=nil, and if err!=n
 
 OUTPUT:
 2021/4/12 14:34:23 main.go:24: [INFO] generating logs
-```
-
-<br> If you want to log `info`(other information), do:
-```
-Try(err, false, message)
 ```
 
 ### How to create formatted texts on console:
